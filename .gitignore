@@ -136,3 +136,6 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/flask-sqlite-glitch/v16/.suo
