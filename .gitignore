@@ -139,3 +139,4 @@ cython_debug/
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 .vs/flask-sqlite-glitch/v16/.suo
+db_directory/*.sqlite3

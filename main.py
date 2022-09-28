@@ -27,7 +27,7 @@ def create_app():
       app.config.from_object(LocalDevelopmentConfig)
     db.init_app(app)
     migrate = Migrate(app, db)
-    app.app_context().push()
+    # app.app_context().push()
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
     security = Security(app, user_datastore)    
     app.logger.info("App setup complete")

@@ -1,6 +1,7 @@
+from main import app
 from flask import Flask, request
 from flask import render_template
-from flask import current_app as app
+from flask import current_app
 from application.models import Article, ArticleSearch
 from flask_security import login_required, roles_required
 

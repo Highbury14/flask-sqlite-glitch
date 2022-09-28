@@ -11,9 +11,9 @@ class LocalDevelopmentConfig(Config):
     SQLITE_DB_DIR = os.path.join(basedir, "../db_directory")
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(SQLITE_DB_DIR, "testdb.sqlite3")
     DEBUG = True
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = os.environ['SECRET_KEY'] or '123'
     SECURITY_PASSWORD_HASH = "bcrypt"
-    SECURITY_PASSWORD_SALT = os.environ['SECURITY_PASSWORD_SALT']
+    SECURITY_PASSWORD_SALT = os.environ['SECURITY_PASSWORD_SALT'] or '123'
     SECURITY_REGISTERABLE = True
     SECURITY_SEND_REGISTER_EMAIL = False
     SECURITY_UNAUTHORIZED_VIEW = None
@@ -21,9 +21,9 @@ class LocalDevelopmentConfig(Config):
 class TestingConfig(Config):
     SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
     DEBUG = True
-    SECRET_KEY = os.environ['SECRET_KEY'] 
+    SECRET_KEY = os.environ['SECRET_KEY'] or '123'
     SECURITY_PASSWORD_HASH = "bcrypt"
-    SECURITY_PASSWORD_SALT = os.environ['SECURITY_PASSWORD_SALT'] 
+    SECURITY_PASSWORD_SALT = os.environ['SECURITY_PASSWORD_SALT'] or '123'
     SECURITY_REGISTERABLE = True
     SECURITY_SEND_REGISTER_EMAIL = False
     SECURITY_UNAUTHORIZED_VIEW = None    
@@ -33,9 +33,9 @@ class ProductionConfig(Config):
     SQLITE_DB_DIR = os.path.join(basedir, "../.data")
     SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(SQLITE_DB_DIR, "db.sqlite3")
     DEBUG = True
-    SECRET_KEY =  os.environ['SECRET_KEY']
+    SECRET_KEY =  os.environ['SECRET_KEY'] or '123'
     SECURITY_PASSWORD_HASH = "bcrypt"
-    SECURITY_PASSWORD_SALT = os.environ['SECURITY_PASSWORD_SALT']
+    SECURITY_PASSWORD_SALT = os.environ['SECURITY_PASSWORD_SALT'] or '123'
     SECURITY_REGISTERABLE = True
     SECURITY_SEND_REGISTER_EMAIL = False
     SECURITY_UNAUTHORIZED_VIEW = None
